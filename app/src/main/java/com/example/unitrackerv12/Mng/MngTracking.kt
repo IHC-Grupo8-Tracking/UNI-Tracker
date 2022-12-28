@@ -1,9 +1,11 @@
 package com.example.unitrackerv12.Mng
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.EditText
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.unitrackerv12.*
@@ -12,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_mngtracking.*
 var DEBUG_TAG = "LIST_USERS"
 
 class MngTracking:AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mngtracking)
@@ -33,7 +36,19 @@ class MngTracking:AppCompatActivity() {
         // list users in "userlist" ListView
 
         var groupid = "amigos"; // ver como leer el group id de la otra vista (el mapa)
-        // var groupid =
+
+
+        val groupIdEditText = findViewById<EditText>(R.id.GroupID)
+        Log.d(DEBUG_TAG, "groupIdEditText ${groupIdEditText}")
+        /*
+        // NOTA: groupIdEditText es siempre null
+        var text = groupIdEditText.text.toString()
+        Log.d(DEBUG_TAG, "text ${text}")
+        if(text != ""){
+            groupid = text;
+        }
+         */
+
         var doc = GroupManager.collection.document(groupid)
         doc.get()
             .addOnSuccessListener { documentSnapshot ->
