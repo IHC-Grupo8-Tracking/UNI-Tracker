@@ -21,6 +21,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.example.unitrackerv12.databinding.ActivityMapsBinding
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
@@ -179,6 +180,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         mMap.uiSettings.isZoomControlsEnabled = true
+        //val styleOptions = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_dark);
+        //val styleOptions = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_protanopia);
+        val styleOptions = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_deuteranopia);
+        mMap.setMapStyle(styleOptions)
         getLocationAccess()
     }
 
