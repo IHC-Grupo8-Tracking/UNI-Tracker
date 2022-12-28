@@ -11,7 +11,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.unitrackerv12.IngrReg.SignInActivity
 import com.example.unitrackerv12.MapsActivity
+import com.example.unitrackerv12.MapsActivity.*
 import com.example.unitrackerv12.R
+import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_mngaccount.*
 
@@ -19,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_mngaccount.*
 
 class MngAccount : AppCompatActivity(){
     var auth: FirebaseAuth = FirebaseAuth.getInstance()
-    var list: List<String> = listOf("Normal", "Dark", "Deuteranopía", "Protanopía", "Tritanopía")
+    var list: List<String> = listOf("Normal", "Dark", "Deuteranopía", "Protanopía")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,21 +34,22 @@ class MngAccount : AppCompatActivity(){
         Spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 val selectedItem = parent.getItemAtPosition(position).toString()
+                var Maps = MapsActivity()
                 if (selectedItem == "Normal") {
                     //"Normal"
                     println("Normal")
                 } else if(selectedItem == "Dark") {
                     //"Dark"
                     println("Dark")
+                    Maps.changeMapColors(selectedItem)
                 } else if(selectedItem == "Deuteranopía"){
                     //"Deuteranopía"
                     println("Deuteranopía")
+                    Maps.changeMapColors(selectedItem)
                 } else if(selectedItem == "Protanopía"){
                     //"Protanopía"
                     println("Protanopía")
-                }else if (selectedItem == "Tritanopía"){
-                    //"Tritanopía"
-                    println("Tritanopía" )
+                    Maps.changeMapColors(selectedItem)
                 }
             }
 

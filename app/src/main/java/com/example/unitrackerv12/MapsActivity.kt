@@ -35,7 +35,7 @@ import java.util.*
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    private lateinit var mMap: GoogleMap
+    lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
     private val LOCATION_PERMISSION_REQUEST = 1
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -180,11 +180,33 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         mMap.uiSettings.isZoomControlsEnabled = true
-        //val styleOptions = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_dark);
-        //val styleOptions = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_protanopia);
-        val styleOptions = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_deuteranopia);
-        mMap.setMapStyle(styleOptions)
         getLocationAccess()
+    }
+
+    fun changeMapColors(style: String){
+        val dark = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_dark);
+        val protanopia = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_protanopia);
+        val deuteranopia = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_deuteranopia);
+        if (style == "Normal") {
+            //"Normal"
+            println("Normal")
+        } else if(style == "Dark") {
+            //"Dark"
+            println("Dark")
+            mMap.setMapStyle(dark)
+        } else if(style == "Deuteranopía"){
+            //"Deuteranopía"
+            println("Deuteranopía")
+            mMap.setMapStyle(deuteranopia)
+        } else if(style == "Protanopía"){
+            //"Protanopía"
+            println("Protanopía")
+            mMap.setMapStyle(protanopia)
+        }
+    }
+
+    fun getMap(): GoogleMap {
+        return mMap
     }
 
     private fun startLocationUpdates() {
