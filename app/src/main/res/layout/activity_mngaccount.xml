@@ -10,7 +10,7 @@
         android:id="@+id/textView4"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:text="Administración de Cuenta"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -24,7 +24,7 @@
         android:id="@+id/textView7"
         android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="20dp"
         android:text="Modificar Contraseña"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -38,7 +38,7 @@
         android:id="@+id/buttonModPasswd"
         android:layout_width="218dp"
         android:layout_height="51dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#4CAF50"
         android:text="Modificar Contraseña"
         android:textColor="@color/white"
@@ -54,7 +54,7 @@
         android:layout_width="157dp"
         android:layout_height="36dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="Cerrar Sesión"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -62,11 +62,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonElimCuenta" />
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="157dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="20dp"
+        android:text="Temas"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCerrarSes" />
+
     <Button
         android:id="@+id/buttonCerrarSes"
         android:layout_width="218dp"
         android:layout_height="51dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@android:color/holo_orange_dark"
         android:text="Cerrar Sesión"
         android:textColor="@color/white"
@@ -108,7 +121,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="Eliminar Cuenta"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -122,7 +135,7 @@
         android:id="@+id/buttonElimCuenta"
         android:layout_width="218dp"
         android:layout_height="51dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Eliminar Cuenta"
         android:textColor="@color/white"
@@ -137,7 +150,7 @@
         android:id="@+id/textView10"
         android:layout_width="143dp"
         android:layout_height="27dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:text="ID de Usuario:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -149,9 +162,9 @@
     <TextView
         android:id="@+id/textIDUser"
         android:layout_width="153dp"
-        android:layout_height="39dp"
+        android:layout_height="27dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:clickable="true"
         android:focusable="true"
         android:textColor="@android:color/holo_blue_light"
@@ -161,5 +174,15 @@
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/spinner_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

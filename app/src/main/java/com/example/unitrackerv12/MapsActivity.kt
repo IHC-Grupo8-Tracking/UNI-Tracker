@@ -329,9 +329,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 if (key.equals("grupo")) {
                     println("key grupo :$key")
                     println("value grupo: $value")
+                    var doc = GroupManager.collection.document(value)
+                    if (true){
+                        GetLocationGroup(value)
+                    }else{
+                        println("Nombre de grupo no existe")
+                    }
+
                 } else if (key.equals("usuario")) {
                     println("key usuario: $key")
                     println("value usuario: $value")
+                    if (true){
+                        //GetLocationUser(value)
+                    }else{
+                        println("Nombre de usuario no existe")
+                    }
+                }else{
+                    println("a")
                 }
 
                 // Configuración de los datos en el texto de salida
