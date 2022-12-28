@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "982510145411",
+    "project_id": "ihc-tracker",
+    "storage_bucket": "ihc-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982510145411:android:c6f2c3ba62ebedfa6070b6",
+        "android_client_info": {
+          "package_name": "com.example.unitrackerv12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982510145411-em0pmbrrhdps6of0pmhsde3ege3vl6ai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkS3ZIBqCWAdZACqgHVT5oAyALGfJ7Sgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982510145411-em0pmbrrhdps6of0pmhsde3ege3vl6ai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
