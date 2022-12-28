@@ -3,6 +3,9 @@ package com.example.unitrackerv12.Mng
 import android.content.*
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -16,9 +19,41 @@ import kotlinx.android.synthetic.main.activity_mngaccount.*
 
 class MngAccount : AppCompatActivity(){
     var auth: FirebaseAuth = FirebaseAuth.getInstance()
+    var list: List<String> = listOf("Normal", "Dark", "Deuteranopía", "Protanopía", "Tritanopía")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mngaccount)
+
+        val adapter: ArrayAdapter<String> = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, list)
+
+        Spinner.adapter = adapter
+
+        Spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                val selectedItem = parent.getItemAtPosition(position).toString()
+                if (selectedItem == "Normal") {
+                    //"Normal"
+                    println("Normal")
+                } else if(selectedItem == "Dark") {
+                    //"Dark"
+                    println("Dark")
+                } else if(selectedItem == "Deuteranopía"){
+                    //"Deuteranopía"
+                    println("Deuteranopía")
+                } else if(selectedItem == "Protanopía"){
+                    //"Protanopía"
+                    println("Protanopía")
+                }else if (selectedItem == "Tritanopía"){
+                    //"Tritanopía"
+                    println("Tritanopía" )
+                }
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+        }
 
         //Se muestra el id de usuario en el textIDUser
         textIDUser.setText(auth.currentUser?.uid)
